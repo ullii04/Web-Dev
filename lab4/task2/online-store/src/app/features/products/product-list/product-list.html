@@ -1,0 +1,12 @@
+<div class="page">
+  <header class="header">
+    <h1>Online Store</h1>
+    <p>Catalog of real products from Kaspi.kz • Share via WhatsApp/Telegram</p>
+  </header>
+
+  <section class="grid">
+    @for (p of products; track p.id) {
+      <app-product-card [product]="p" (shared)="onShared($event)"></app-product-card>
+    }
+  </section>
+</div>
