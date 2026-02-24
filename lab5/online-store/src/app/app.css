@@ -1,0 +1,6 @@
+.page { max-width: 1100px; margin: 0 auto; padding: 16px; font-family: system-ui, Arial; }
+.header { margin-bottom: 14px; }
+.cats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.catBtn { padding: 10px 14px; border-radius: 10px; border: 1px solid #ddd; background: #fff; cursor: pointer; }
+.catBtn.active { border-color: #111; background: #f2f2f2; }
+.welcome { padding: 18px; border: 1px dashed #ccc; border-radius: 12px; }

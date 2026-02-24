@@ -1,0 +1,13 @@
+@if (localProducts.length === 0) {
+  <p class="empty">No products in this category</p>
+} @else {
+  <section class="grid">
+    @for (p of localProducts; track p.id) {
+      <app-product-card
+        [product]="p"
+        (shared)="onShared($event)"
+        (delete)="remove($event)"
+      ></app-product-card>
+    }
+  </section>
+}

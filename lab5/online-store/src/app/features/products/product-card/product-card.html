@@ -1,0 +1,39 @@
+<div class="card">
+  <button class="imageWrap" type="button" (click)="openKaspi()" title="Open on Kaspi">
+    <img class="mainImg" [src]="mainImage()" [alt]="product().name" />
+  </button>
+
+  <div class="thumbs">
+    @for (img of product().images; track img) {
+      <button class="thumbBtn" type="button" (click)="setMain(img)">
+        <img class="thumbImg" [src]="img" [alt]="product().name + ' thumbnail'" />
+      </button>
+    }
+  </div>
+
+  <h3 class="title">{{ product().name }}</h3>
+  <p class="desc">{{ product().description }}</p>
+
+  <div class="meta">
+    <div class="price">{{ product().price | number }} ₸</div>
+
+    <div class="rating">
+      <span class="stars">
+        @for (filled of stars(); track $index) {
+          <span class="star" [class.filled]="filled">★</span>
+        }
+      </span>
+      <span class="ratingNum">{{ product().rating }}</span>
+    </div>
+
+    <div class="likes">❤ {{ product().likes }}</div>
+  </div>
+
+  <div class="actions">
+    <button class="btn primary" type="button" (click)="openKaspi()">Open</button>
+    <button class="btn" type="button" (click)="like()">Like</button>
+    <button class="btn" type="button" (click)="shareWhatsApp()">Share WhatsApp</button>
+    <button class="btn" type="button" (click)="shareTelegram()">Share Telegram</button>
+    <button class="btn danger" type="button" (click)="requestDelete()">Delete</button>
+  </div>
+</div>
