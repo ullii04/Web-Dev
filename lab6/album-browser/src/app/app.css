@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e8e8e8;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+.brand { font-weight: 700; }
+
+.links { display: flex; gap: 12px; flex-wrap: wrap; }
+.links a {
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: #222;
+}
+.links a.active { background: #111; color: #fff; }
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px;
+}

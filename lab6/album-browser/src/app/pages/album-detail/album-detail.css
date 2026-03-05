@@ -1,0 +1,34 @@
+.card {
+  padding: 18px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.row { opacity: 0.9; }
+
+.label { display: grid; gap: 6px; }
+.input {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn {
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.primary { background: #111; color: #fff; border-color: #111; }
+
+.info { padding: 10px 0; opacity: 0.8; }
+.error { padding: 10px 0; color: #b00020; }

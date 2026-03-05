@@ -1,0 +1,15 @@
+.card {
+  padding: 18px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+}
