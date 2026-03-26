@@ -18,6 +18,14 @@ export class ProductList {
     this.localProducts = [...this.products()];
   }
 
+  sortPriceAsc() {
+    this.localProducts = [...this.localProducts].sort((a, b) => a.price - b.price);
+  }
+
+  sortPriceDesc() {
+    this.localProducts = [...this.localProducts].sort((a, b) => b.price - a.price);
+  }
+
   remove(id: number) {
     this.localProducts = this.localProducts.filter(p => p.id !== id);
   }

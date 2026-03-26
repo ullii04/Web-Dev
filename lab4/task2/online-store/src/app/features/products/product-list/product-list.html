@@ -1,12 +1,13 @@
-<div class="page">
-  <header class="header">
-    <h1>Online Store</h1>
-    <p>Catalog of real products from Kaspi.kz • Share via WhatsApp/Telegram</p>
-  </header>
-
+@if (localProducts.length === 0) {
+  <p class="empty">No products in this category</p>
+} @else {
   <section class="grid">
-    @for (p of products; track p.id) {
-      <app-product-card [product]="p" (shared)="onShared($event)"></app-product-card>
+    @for (p of localProducts; track p.id) {
+      <app-product-card
+        [product]="p"
+        (shared)="onShared($event)"
+        (delete)="remove($event)"
+      ></app-product-card>
     }
   </section>
-</div>
+}

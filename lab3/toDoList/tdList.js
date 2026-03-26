@@ -2,6 +2,17 @@ const form = document.getElementById('todo-form');
 const taskInput = document.getElementById('task-input');
 const todoList = document.getElementById('todo-list');
 
+const toggleBtn = document.getElementById('toggle-todos');
+let isHidden = false;
+
+toggleBtn.addEventListener('click', () => {
+  isHidden = !isHidden;
+  todoList.style.display = isHidden ? 'none' : 'block';
+  toggleBtn.textContent = isHidden ? 'Show todos' : 'Hide todos';
+});
+
+ 
+
 const createTodoItem = (taskText) => {
   const listItem = document.createElement('li');
 
@@ -40,9 +51,7 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const taskText = taskInput.value.trim();
-  if (taskText === '') {
-    return;
-  }
+  if (taskText === '') return;
 
   const todoItem = createTodoItem(taskText);
   todoList.appendChild(todoItem);

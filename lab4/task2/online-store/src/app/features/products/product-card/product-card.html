@@ -25,11 +25,15 @@
       </span>
       <span class="ratingNum">{{ product().rating }}</span>
     </div>
+
+    <div class="likes">❤ {{ product().likes }}</div>
   </div>
 
   <div class="actions">
     <button class="btn primary" type="button" (click)="openKaspi()">Open</button>
+    <button class="btn" type="button" (click)="like()">Like</button>
     <button class="btn" type="button" (click)="shareWhatsApp()">Share WhatsApp</button>
     <button class="btn" type="button" (click)="shareTelegram()">Share Telegram</button>
+    <button class="btn danger" type="button" (click)="requestDelete()">Delete</button>
   </div>
 </div>

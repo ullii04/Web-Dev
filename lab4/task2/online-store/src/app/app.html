@@ -1,1 +1,27 @@
-<router-outlet></router-outlet>
+<div class="page">
+  <header class="header">
+    <h1>Online Store</h1>
+    <p>Lab 5 — Categories, Components, Like & Delete</p>
+  </header>
+
+  <div class="cats">
+    @for (c of categories; track c.id) {
+      <button
+        class="catBtn"
+        [class.active]="c.id === selectedCategoryId"
+        (click)="selectCategory(c.id)"
+      >
+        {{ c.name }}
+      </button>
+    }
+  </div>
+
+  @if (selectedCategoryId === null) {
+    <div class="welcome">
+      <h2>Welcome 👋</h2>
+      <p>Please select a category to view products.</p>
+    </div>
+  } @else {
+    <app-product-list [products]="selectedProducts"></app-product-list>
+  }
+</div>

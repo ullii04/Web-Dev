@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../models/product.model';
-import { PRODUCTS } from '../../../data/products';
 import { ProductCard } from '../product-card/product-card';
 
 @Component({
@@ -12,7 +11,16 @@ import { ProductCard } from '../product-card/product-card';
   styleUrl: './product-list.css',
 })
 export class ProductList {
-  products: Product[] = PRODUCTS;
+  products = input.required<Product[]>();
+  localProducts: Product[] = [];
+
+  ngOnChanges() {
+    this.localProducts = [...this.products()];
+  }
+
+  remove(id: number) {
+    this.localProducts = this.localProducts.filter(p => p.id !== id);
+  }
 
   onShared(p: Product) {
     console.log('Shared:', p.name, p.link);

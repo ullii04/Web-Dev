@@ -11,7 +11,12 @@ import { Product } from '../../../models/product.model';
 })
 export class ProductCard {
   product = input.required<Product>();
+
+  // existing share output
   shared = output<Product>();
+
+  // NEW: delete output (send product id)
+  delete = output<number>();
 
   mainImage = signal<string>('');
 
@@ -33,6 +38,16 @@ export class ProductCard {
 
   openKaspi() {
     window.open(this.product().link, '_blank');
+  }
+
+  // NEW: Like
+  like() {
+    this.product().likes += 1;
+  }
+
+  // NEW: Delete emit
+  requestDelete() {
+    this.delete.emit(this.product().id);
   }
 
   shareWhatsApp() {

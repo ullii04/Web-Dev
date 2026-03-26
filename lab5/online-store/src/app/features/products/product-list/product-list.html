@@ -1,6 +1,11 @@
 @if (localProducts.length === 0) {
   <p class="empty">No products in this category</p>
 } @else {
+  <div class="toolbar">
+    <button type="button" (click)="sortPriceAsc()">Price asc</button>
+    <button type="button" (click)="sortPriceDesc()">Price desc</button>
+  </div>
+
   <section class="grid">
     @for (p of localProducts; track p.id) {
       <app-product-card

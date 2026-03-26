@@ -7,4 +7,8 @@ export interface Product {
   image: string;
   images: string[];
   link: string;
-}
+
+  // Lab5 NEW
+  likes: number;
+  categoryId: number;
+} 
